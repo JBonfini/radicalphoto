@@ -28,16 +28,16 @@
 
 	<div id="gallery">
 		<ul>
-			<li><a href="images/blue_dress.jpg"><img src="images/blue_dress_thumb.jpg"></a></li>
-			<li><a href="images/boxer.jpg"><img src="images/boxer_thumb.jpg"></a></li>
-			<li><a href="images/cow.jpg"><img src="images/cow_thumb.jpg"></a></li>
-			<li><a href="images/country_boy_relaxing.jpg"><img src="images/country_boy_relaxing_thumb.jpg"></a></li>
-			<li><a href="images/eye.jpg"><img src="images/eye_thumb.jpg"></a></li>
-			<li><a href="images/ice_swim.jpg"><img src="images/ice_swim_thumb.jpg"></a></li>
-			<li><a href="images/sitting.jpg"><img src="images/sitting_thumb.jpg"></a></li>
+			<li><a href="images/blue_dress.jpg"><img id="blue-dress" src="images/blue_dress_thumb.jpg"></a></li>
+			<li><a href="images/boxer.jpg"><img id="boxer" src="images/boxer_thumb.jpg"></a></li>
+			<!--<li><a href="images/cow.jpg"><img src="images/cow_thumb.jpg"></a></li>-->
+			<li><a href="images/country_boy_relaxing.jpg"><img id="country-boy" src="images/country_boy_relaxing_thumb.jpg"></a></li>
+			<li><a href="images/eye.jpg"><img id="eye" src="images/eye_thumb.jpg"></a></li>
+			<li><a href="images/ice_swim.jpg"><img id="ice-swim" src="images/ice_swim_thumb.jpg"></a></li>
+            <li><a href="images/sitting.jpg"><img id="sitting" src="images/sitting_thumb.jpg"></a></li>
 		</ul>
 
-		<p><img src="images/blue_dress.jpg" alt=""></p>
+		<p><img id="big-img" src="images/blue_dress.jpg" alt=""></p>
 
 	</div>
 
@@ -48,6 +48,42 @@
 	</div>
 
 </div>
+
+<script>
+    
+var blue_dress = document.getElementById("blue-dress");
+var boxer = document.getElementById("boxer");
+var country_boy = document.getElementById("country-boy");
+var eye = document.getElementById("eye");
+var ice_swim = document.getElementById("ice-swim");
+var sitting = document.getElementById("sitting");
+var big_img = document.getElementById("big-img");
+
+blue_dress.onmouseover = function() {
+    big_img.src = "images/blue_dress.jpg";
+}
+
+boxer.onmouseover = function() {
+    big_img.src = "images/boxer.jpg"; 
+}
+
+country_boy.onmouseover = function() {
+    big_img.src = "images/country_boy_relaxing.jpg";   
+}
+
+eye.onmouseover = function() {
+    big_img.src = "images/eye.jpg";   
+}
+
+ice_swim.onmouseover = function() {
+    big_img.src = "images/ice_swim.jpg";   
+}
+
+sitting.onmouseover = function() {
+    big_img.src = "images/sitting.jpg";   
+}
+
+</script>
 
 </body>
 </html>
