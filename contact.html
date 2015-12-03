@@ -30,10 +30,10 @@
 
 		<p class="errors">All fields are required.</p>
 
-		<p><label>Name: <input type="text" size="25" name="name" id="username"></label></p>
-		<p><label>Email: <input type="text" size="25" name="email" id="email"></label></p>
-		<p><label>Message:<br> <textarea cols="50" rows="5" name="message" id="my_message"></textarea></label></p>
-		<p><input type="submit" value="Contact Us"></p>
+		<p><label>Name: <input type="text" size="25" name="name" id="name"></label><span id="name_error"></span></p>
+		<p><label>Email: <input type="text" size="25" name="email" id="email"></label><span id="email_error"></span></p>
+		<p><label>Message:<br> <textarea cols="50" rows="5" name="message" id="message"></textarea></label><span id="message_error"></span></p>
+		<p><input id="submit-btn" type="submit" value="Contact Us"></p>
 	</form>
 
 	</div>
@@ -43,6 +43,78 @@
 	</div>
 
 </div>
+
+<script>
+    
+    //------ JAVASCRIPT FORM ------
+    var my_form = document.getElementById("myform");
+    var the_name = document.getElementById("name");
+    var the_email = document.getElementById("email");
+    var the_message = document.getElementById("message");
+    var submit_btn = document.getElementById("submit-btn");
+    var name_error = document.getElementById("name_error");
+    var email_error =  document.getElementById("email_error");
+    var message_error = document.getElementById("message_error");
+    
+    //------ EVENT FUNTION ------
+my_form.onsubmit = function() {
+    var errors = 0;
+    var user_name = the_name.value;
+    var user_email = the_email.value;
+    var user_message = the_message.value;
+    
+    
+    //NAME:
+        if(user_name == "") {
+            the_name.style.border = "2px solid #C00";
+            the_name.style.boxShadow = "0 0 5px #C00";
+            name_error.innerHTML = "Field Required";
+            name_error.style.color = "#C00";
+            name_error.style.marginLeft = "15px";
+            errors++;
+        } else {
+            the_name.style.border = "2px solid limegreen";
+            the_name.style.boxShadow = "none";
+        }
+    
+    
+    
+    //E-MAIL:
+        if(user_email == "") {
+            the_email.style.border = "2px solid #C00";
+            the_email.style.boxShadow = "0 0 5px #C00";
+            email_error.innerHTML = "Field Required";
+            email_error.style.color = "#C00";
+            email_error.style.marginLeft = "15px";
+            errors++;
+        } else {
+            the_email.style.border = "2px solid limegreen";
+            the_email.style.boxShadow = "none";
+        }
+    
+    
+    
+    //MESSAGE
+        if(user_message == "") {
+            the_message.style.border = "2px solid #C00";
+            the_message.style.boxShadow = "0 0 5px #C00";
+            message_error.innerHTML = "Field Required";
+            message_error.style.color = "#C00";
+            message_error.style.marginLeft = "15px";
+            errors++;
+        } else {
+            message.style.border = "2px solid limegreen";
+            message.style.boxShadow = "none";
+        }
+    
+        if(errors > 0) {
+            return false;   
+        }
+        
+}
+    
+    
+</script>
 
 </body>
 </html>
